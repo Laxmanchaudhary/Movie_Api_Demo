@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movinavigation"
+    app:startDestination="@id/moviesFragment"
+    tools:ignore="UnusedNavigation">
+
+    <fragment
+        android:id="@+id/moviesFragment"
+        android:name="com.example.mvvm_movie_api_demo.View.MoviesFragment"
+        android:label="Movies"
+        tools:layout="@layout/movies_fragment" />
+</navigation>
