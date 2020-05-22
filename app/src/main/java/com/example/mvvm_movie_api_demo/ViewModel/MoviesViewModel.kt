@@ -1,10 +1,8 @@
 package com.example.mvvm_movie_api_demo.ViewModel
 
-import android.graphics.Movie
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.mvvm_movie_api_demo.Coroutine.IoThenMain
 import com.example.mvvm_movie_api_demo.Movies
 import com.example.mvvm_movie_api_demo.Repository.MoviesRepository
 import kotlinx.coroutines.*
