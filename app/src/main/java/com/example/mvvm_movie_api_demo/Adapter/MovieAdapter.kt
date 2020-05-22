@@ -10,7 +10,7 @@ import com.example.mvvm_movie_api_demo.OnClick.OnClickListener
 import com.example.mvvm_movie_api_demo.R
 import com.example.mvvm_movie_api_demo.databinding.MovieRowBinding
 
-class MovieAdapter(var list:List<Movies>, var context: Context, private val onClickListener: OnClickListener):RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+class MovieAdapter(var list:List<Movies>, var context: Context, var onClickListener:OnClickListener):RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     class ViewHolder(var movieRowBinding: MovieRowBinding) :RecyclerView.ViewHolder(movieRowBinding.root)
 

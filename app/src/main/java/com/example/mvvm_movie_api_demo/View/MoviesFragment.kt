@@ -54,10 +54,13 @@ class MoviesFragment : Fragment(),OnClickListener {
     override fun onClick(view: View, movie: Movies, msg: String) {
         when(view.id){
             //R.id.button_book->Toast.makeText(requireActivity(),msg,Toast.LENGTH_LONG).show()
-            R.id.button_book->mainlayout.showsnack(msg)
-            R.id.imageView->mainlayout.showsnack(msg)
+            R.id.button_book->{
+                mainlayout.showsnack(msg)}
+
+                R.id.imageView->{mainlayout.showsnack(msg)}
+            }
         }
 
     }
 
-}
+
