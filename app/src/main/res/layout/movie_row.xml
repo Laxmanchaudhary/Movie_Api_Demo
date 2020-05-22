@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+<import type="android.view.View"></import>
         <variable
             name="movie"
             type="com.example.mvvm_movie_api_demo.Movies" />
@@ -16,6 +16,7 @@
 
 
         <LinearLayout
+            android:id="@+id/mainlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -50,6 +51,7 @@
                             android:textColor="#ffffff"
                             android:layout_marginTop="10dp"
                             android:id="@+id/textViewIsNew"
+                            android:visibility="@{movie.is_new()==0 ? View.INVISIBLE :View.VISIBLE}"
                             android:text="New"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />
@@ -79,7 +81,7 @@
                             android:layout_margin="15dp"
                             android:layout_alignParentBottom="true"
                             android:layout_alignParentRight="true"
-                            android:background="@drawable/relativelayout_background"
+                            android:background="@android:color/black"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
@@ -97,19 +99,20 @@
                                 android:textStyle="bold"
                                 android:textColor="#ffffff"
                                 android:id="@+id/textViewLikePercent"
-                                android:text="78%"
+                                android:text="@string/likepercent"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content" />
 
                             <TextView
-                                android:text="23023 votes"
+                                android:text="@string/votes"
                                 android:textSize="10sp"
                                 android:layout_centerHorizontal="true"
                                 android:layout_below="@id/textViewLikePercent"
                                 android:textColor="@android:color/white"
                                 android:id="@+id/textViewVotesCount"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" />
+                                android:layout_height="wrap_content"
+                                tools:ignore="SmallSp" />
 
 
                         </RelativeLayout>
@@ -141,6 +144,8 @@
                             android:id="@+id/button_book"
                             android:layout_alignParentRight="true"
                             android:text="Book"
+                            android:textColor="#abc"
+                            android:background="@drawable/bg_btn"
                             android:layout_centerVertical="true"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content" />

@@ -5,7 +5,7 @@ data class Movies(
     val image: String,
     val is_new: Int,
     val language: String,
-    val like_percent: Int,
+    val like_percent: String,
     val rating: String,
     val title: String,
     val type: String,

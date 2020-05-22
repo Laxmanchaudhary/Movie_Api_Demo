@@ -1,4 +1,4 @@
-package com.example.mvvm_movie_api_demo
+package com.example.mvvm_movie_api_demo.Adapter
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter

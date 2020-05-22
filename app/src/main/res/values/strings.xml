@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MVVM_Movie_Api_Demo</string>
+    <string name="likepercent">78%</string>
+    <string name="votes">23023 votes</string>
 </resources>

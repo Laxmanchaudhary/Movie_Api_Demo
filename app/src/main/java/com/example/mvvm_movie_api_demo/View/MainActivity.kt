@@ -31,31 +31,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
        var controller= findNavController(R.id.fragment)
         setupActionBarWithNavController(controller,null)
-
-        var api=Movie_Api()
-        var repository=MoviesRepository(api)
-        factory= Factory(repository)
-        viewModel = ViewModelProviders.of(this,factory).get(MoviesViewModel::class.java)
-        viewModel.movie.observe(this, Observer {  movie->
-            this.showToast(movie.toString())
-
-            movies_recyclerview.also {
-                it.setHasFixedSize(true)
-                it.layoutManager= LinearLayoutManager(this)
-                it.adapter= MovieAdapter(movie,this)
-            }
-
-        })
-
-
-//        var repo=MoviesRepository(Movie_Api())
-//        GlobalScope.launch(Main) {
-//           var movie= repo.getMoviesRepo()
-//            this@MainActivity.showToast(movie.toString())
-
-
-     //   }
-
-
     }
 }

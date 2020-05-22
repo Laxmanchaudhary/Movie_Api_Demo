@@ -6,10 +6,11 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mvvm_movie_api_demo.Movies
+import com.example.mvvm_movie_api_demo.OnClick.OnClickListener
 import com.example.mvvm_movie_api_demo.R
 import com.example.mvvm_movie_api_demo.databinding.MovieRowBinding
 
-class MovieAdapter(var list:List<Movies>, var context: Context):RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+class MovieAdapter(var list:List<Movies>, var context: Context,private val onClickListener: OnClickListener):RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
 
     class ViewHolder(var movieRowBinding: MovieRowBinding) :RecyclerView.ViewHolder(movieRowBinding.root)
 
@@ -24,6 +25,14 @@ class MovieAdapter(var list:List<Movies>, var context: Context):RecyclerView.Ada
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
        holder.movieRowBinding.movie=list[position]
+
+        holder.movieRowBinding.buttonBook.setOnClickListener {
+            onClickListener.onClick(holder.movieRowBinding.buttonBook,list[position],"Sorry cant book now !!")
+
+        }
+        holder.movieRowBinding.imageView.setOnClickListener {
+            onClickListener.onClick(holder.movieRowBinding.imageView,list[position],list[position].title.toString())
+        }
     }
 
 }
