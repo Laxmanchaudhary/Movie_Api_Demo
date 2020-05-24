@@ -8,11 +8,17 @@ abstract class Api_Request() {
 
    suspend fun<T:Any> RequestApi(call:suspend()->Response<T>):T{
        var res=call.invoke()
-       if (res.isSuccessful){
-           return res.body()!!
-       }else{
-           throw Exception("${res.code()}")
-       }
+
+
+           if (res.isSuccessful){
+               return res.body()!!
+           }else{
+               throw Exception("${res.code()}")
+           }
+
+
+
+
 
     }
 

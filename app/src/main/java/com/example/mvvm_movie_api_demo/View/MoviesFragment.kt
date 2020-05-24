@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mvvm_movie_api_demo.Adapter.MovieAdapter
 import com.example.mvvm_movie_api_demo.Api.Movie_Api
+import com.example.mvvm_movie_api_demo.Internet.NetworkIntercepter
 import com.example.mvvm_movie_api_demo.Movies
 import com.example.mvvm_movie_api_demo.OnClick.OnClickListener
 import com.example.mvvm_movie_api_demo.ViewModel.MoviesViewModel
@@ -19,6 +20,7 @@ import com.example.mvvm_movie_api_demo.Util.showsnack
 import com.example.mvvm_movie_api_demo.ViewModel.Factory
 import kotlinx.android.synthetic.main.movie_row.*
 import kotlinx.android.synthetic.main.movies_fragment.*
+import okhttp3.Interceptor
 
 
 class MoviesFragment : Fragment(),OnClickListener {
@@ -35,7 +37,9 @@ class MoviesFragment : Fragment(),OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        var api=Movie_Api()
+        //Interceptor= Interceptor(this)
+        val interceptor=NetworkIntercepter(requireContext())
+        var api=Movie_Api(interceptor)
         var repository=MoviesRepository(api)
         factory= Factory(repository)
         viewModel = ViewModelProviders.of(this,factory).get(MoviesViewModel::class.java)
